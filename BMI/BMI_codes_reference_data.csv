@@ -1,0 +1,52 @@
+﻿ConceptID,ConceptId_Description,BMI_CAT
+736013005,Body weight measurement declined (situation),UNSUITABLE/DECLINED
+914731000000107,Obese class II (body mass index 35.0 - 39.9) (finding),OBESE
+60621009,Body mass index (observable entity),ALL
+414915002,Obese (finding),OBESE
+921051000000109,Child body mass index greater than 99.6th centile (finding),CHILD
+920291000000102,Child body mass index 26th-49th centile (finding),CHILD
+162765000,On examination - weight 10-20% below ideal (finding),UNDERWEIGHT
+920931000000108,Child body mass index on 75th centile (finding),CHILD
+1046351000000106,Unsuitable for body weight measurement (finding),UNSUITABLE/DECLINED
+35425004,Normal body mass index (finding),IDEAL
+920181000000105,Child body mass index on 2nd centile (finding),CHILD
+48499001,Increased body mass index (finding),UNKNOWN
+920311000000101,Child body mass index on 50th centile (finding),CHILD
+162690006,On examination - obese (finding),OBESE
+920251000000105,Child body mass index 10th-24th centile (finding),CHILD
+427090001,Body mass index less than 16.5 (finding),UNDERWEIGHT
+846931000000101,Baseline body mass index (observable entity),ALL
+162764001,On examination - weight greater than 20% below ideal (finding),UNDERWEIGHT
+722595002,Overweight in adulthood with body mass index of 25 or more but less than 30 (finding),OVERWEIGHT
+715456008,Percentage median body mass index for age and sex (observable entity),ALL
+1046331000000104,Unsuitable for body height measurement (finding),UNSUITABLE/DECLINED
+248342006,Underweight (finding),UNDERWEIGHT
+921031000000102,Child body mass index 98.1st-99.6th centile (finding),CHILD
+1037511000000103,Body height measurement declined (situation),UNSUITABLE/DECLINED
+238131007,Overweight (finding),OVERWEIGHT
+921011000000105,Child body mass index on 98th centile (finding),CHILD
+412768003,Body mass index 20-24 - normal (finding),IDEAL
+926011000000101,Down syndrome body mass index centile (observable entity),ALL
+914721000000105,Obese class I (body mass index 30.0 - 34.9) (finding),OBESE
+920271000000101,Child body mass index on 25th centile (finding),CHILD
+443371000124107,Obese class I (finding),OBESE
+920951000000101,Child body mass index 76th-90th centile (finding),CHILD
+920201000000109,Child body mass index 3rd-8th centile (finding),CHILD
+162863004,Body mass index 25-29 - overweight (finding),OVERWEIGHT
+162769006,On examination - Underweight (finding),UNDERWEIGHT
+301331008,Finding of body mass index (finding),ALL
+408512008,Body mass index 40+ - severely obese (finding),OBESE
+275947003,On examination - overweight (finding),OVERWEIGHT
+920971000000105,Child body mass index on 91st centile (finding),CHILD
+6497000,Decreased body mass index (finding),UNKNOWN
+920161000000101,Child body mass index 0.4th-1.9th centile (finding),CHILD
+268915006,On examination - weight 10-20% over ideal (finding),OVERWEIGHT
+920991000000109,Child body mass index 92nd-97th centile (finding),CHILD
+920231000000103,Child body mass index on 9th centile (finding),CHILD
+443381000124105,Obese class II (finding),OBESE
+920141000000102,Child body mass index less than 0.4th centile (finding),CHILD
+914741000000103,Obese class III (body mass index equal to or greater than 40.0) (finding),OBESE
+310252000,Body mass index less than 20 (finding),UNDER_IDEAL_BORDER
+268916007,On examination - weight greater than 20% over ideal (finding),OBESE
+162864005,Body mass index 30+ - obesity (finding),OBESE
+920841000000108,Child body mass index 51st-74th centile (finding),CHILD
