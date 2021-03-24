@@ -1,0 +1,220 @@
+SNOMED_concept_ID,Code_description,CATEGORY
+1092031000000108,Ex-smoker amount unknown (finding),non_smoker_findings_codes
+1092041000000104,Ex-very heavy smoker (40+/day) (finding),non_smoker_findings_codes
+1092071000000105,Ex-heavy smoker (20-39/day) (finding),non_smoker_findings_codes
+1092091000000109,Ex-moderate smoker (10-19/day) (finding),non_smoker_findings_codes
+1092111000000104,Ex-light smoker (1-9/day) (finding),non_smoker_findings_codes
+1092131000000107,Ex-trivial smoker (<1/day) (finding),non_smoker_findings_codes
+160617001,Stopped smoking (finding),non_smoker_findings_codes
+160620009,Ex-pipe smoker (finding),non_smoker_findings_codes
+160621008,Ex-cigar smoker (finding),non_smoker_findings_codes
+160625004,Date ceased smoking (observable entity),Observable_Entities
+228486009,Time since stopped smoking (observable entity),Observable_Entities
+266921000,Ex-trivial cigarette smoker (<1/day) (finding),Value_Finding_Non_Smoker
+266922007,Ex-light cigarette smoker (1-9/day) (finding),Value_Finding_Non_Smoker
+266923002,Ex-moderate cigarette smoker (10-19/day) (finding),Value_Finding_Non_Smoker
+266924008,Ex-heavy cigarette smoker (20-39/day) (finding),Value_Finding_Non_Smoker
+266925009,Ex-very heavy cigarette smoker (40+/day) (finding),Value_Finding_Non_Smoker
+266928006,Ex-cigarette smoker amount unknown (finding),non_smoker_findings_codes
+281018007,Ex-cigarette smoker (finding),non_smoker_findings_codes
+360890004,Intolerant ex-smoker (finding),non_smoker_findings_codes
+360900008,Aggressive ex-smoker (finding),non_smoker_findings_codes
+48031000119106,Ex-smoker for more than 1 year (finding),non_smoker_findings_codes
+492191000000103,Ex roll-up cigarette smoker (finding),non_smoker_findings_codes
+53896009,Tolerant ex-smoker (finding),non_smoker_findings_codes
+735112005,Date ceased using moist tobacco (observable entity),Observable_Entities
+735128000,Ex-smoker for less than 1 year (finding),non_smoker_findings_codes
+8517006,Ex-smoker (finding),non_smoker_findings_codes
+105539002,Non-smoker for personal reasons (finding),non_smoker_findings_codes
+105540000,Non-smoker for religious reasons (finding),non_smoker_findings_codes
+105541001,Non-smoker for medical reasons (finding),non_smoker_findings_codes
+1092031000000108,Ex-smoker amount unknown (finding),non_smoker_findings_codes
+1092041000000104,Ex-very heavy smoker (40+/day) (finding),non_smoker_findings_codes
+1092071000000105,Ex-heavy smoker (20-39/day) (finding),non_smoker_findings_codes
+1092091000000109,Ex-moderate smoker (10-19/day) (finding),non_smoker_findings_codes
+1092111000000104,Ex-light smoker (1-9/day) (finding),non_smoker_findings_codes
+1092131000000107,Ex-trivial smoker (<1/day) (finding),non_smoker_findings_codes
+230058003,Pipe tobacco consumption (observable entity),Observable_Entities
+1092481000000104,Number of calculated smoking pack years (observable entity),Observable_Entities
+110483000,Tobacco user (finding),Value_Finding_Smoker
+134406006,Smoking reduced (finding),Value_Finding_Smoker
+160603005,Light cigarette smoker (1-9 cigs/day) (finding),Value_Finding_Smoker
+160604004,Moderate cigarette smoker (10-19 cigs/day) (finding),Value_Finding_Smoker
+160605003,Heavy cigarette smoker (20-39 cigs/day) (finding),Value_Finding_Smoker
+160606002,Very heavy cigarette smoker (40+ cigs/day) (finding),Value_Finding_Smoker
+160612007,Keeps trying to stop smoking (finding),smoker_findings_codes
+160613002,Admitted tobacco consumption possibly untrue (finding),smoker_findings_codes
+160616005,Trying to give up smoking (finding),smoker_findings_codes
+160617001,Stopped smoking (finding),non_smoker_findings_codes
+160618006,Current non-smoker (finding),Microtest_Error
+160619003,Rolls own cigarettes (finding),smoker_findings_codes
+160620009,Ex-pipe smoker (finding),non_smoker_findings_codes
+160621008,Ex-cigar smoker (finding),non_smoker_findings_codes
+160625004,Date ceased smoking (observable entity),Observable_Entities
+203191000000107,Wants to stop smoking (finding),smoker_findings_codes
+221000119102,Never smoked any substance (finding),non_smoker_findings_codes
+225934006,Smokes in bed (finding),smoker_findings_codes
+228486009,Time since stopped smoking (observable entity),Observable_Entities
+230056004,Cigarette consumption (observable entity),Observable_Entities
+230057008,Cigar consumption (observable entity),Observable_Entities
+230059006,Occasional cigarette smoker (finding),Value_Finding_Smoker
+230060001,Light cigarette smoker (finding),Value_Finding_Smoker
+230062009,Moderate cigarette smoker (finding),Value_Finding_Smoker
+230063004,Heavy cigarette smoker (finding),Value_Finding_Smoker
+230064005,Very heavy cigarette smoker (finding),smoker_findings_codes
+230065006,Chain smoker (finding),smoker_findings_codes
+266918002,Tobacco smoking consumption (observable entity),Observable_Entities
+266919005,Never smoked tobacco (finding),Microtest_Error
+266920004,Trivial cigarette smoker (less than one cigarette/day) (finding),Value_Finding_Smoker
+266921000,Ex-trivial cigarette smoker (<1/day) (finding),Value_Finding_Non_Smoker
+266922007,Ex-light cigarette smoker (1-9/day) (finding),Value_Finding_Non_Smoker
+266923002,Ex-moderate cigarette smoker (10-19/day) (finding),Value_Finding_Non_Smoker
+266924008,Ex-heavy cigarette smoker (20-39/day) (finding),Value_Finding_Non_Smoker
+266925009,Ex-very heavy cigarette smoker (40+/day) (finding),Value_Finding_Non_Smoker
+266928006,Ex-cigarette smoker amount unknown (finding),non_smoker_findings_codes
+266929003,Smoking started (finding),smoker_findings_codes
+281018007,Ex-cigarette smoker (finding),non_smoker_findings_codes
+308438006,Smoking restarted (finding),smoker_findings_codes
+360890004,Intolerant ex-smoker (finding),non_smoker_findings_codes
+360900008,Aggressive ex-smoker (finding),non_smoker_findings_codes
+360918006,Aggressive non-smoker (finding),non_smoker_findings_codes
+360929005,Intolerant non-smoker (finding),non_smoker_findings_codes
+365982000,Finding of tobacco smoking consumption (finding),Value_Finding_Smoker
+394871007,Thinking about stopping smoking (finding),smoker_findings_codes
+394872000,Ready to stop smoking (finding),smoker_findings_codes
+394873005,Not interested in stopping smoking (finding),smoker_findings_codes
+401159003,Reason for restarting smoking (observable entity),Observable_Entities
+401201003,Cigarette pack-years (observable entity),Observable_Entities
+405746006,Current non smoker but past smoking history unknown (finding),non_smoker_findings_codes
+413173009,Minutes from waking to first tobacco consumption (observable entity),Observable_Entities
+428041000124106,Occasional tobacco smoker (finding),smoker_findings_codes
+446172000,Failed attempt to stop smoking (finding),smoker_findings_codes
+449345000,Smoked before confirmation of pregnancy (finding),smoker_findings_codes
+449368009,Stopped smoking during pregnancy (finding),non_smoker_findings_codes
+449369001,Stopped smoking before pregnancy (finding),non_smoker_findings_codes
+449868002,Smokes tobacco daily (finding),smoker_findings_codes
+48031000119106,Ex-smoker for more than 1 year (finding),non_smoker_findings_codes
+492191000000103,Ex roll-up cigarette smoker (finding),non_smoker_findings_codes
+517211000000106,Recently stopped smoking (finding),non_smoker_findings_codes
+53896009,Tolerant ex-smoker (finding),non_smoker_findings_codes
+56578002,Moderate smoker (20 or less per day) (finding),Value_Finding_Smoker
+56771006,Heavy smoker (over 20 per day) (finding),Value_Finding_Smoker
+59978006,Cigar smoker (finding),Value_Finding_Smoker
+65568007,Cigarette smoker (finding),Value_Finding_Smoker
+735112005,Date ceased using moist tobacco (observable entity),Observable_Entities
+735128000,Ex-smoker for less than 1 year (finding),non_smoker_findings_codes
+77176002,Smoker (finding),Value_Finding_Smoker
+82302008,Pipe smoker (finding),Value_Finding_Smoker
+836001000000109,Waterpipe tobacco consumption (observable entity),Observable_Entities
+8392000,Non-smoker (finding),non_smoker_findings_codes
+8517006,Ex-smoker (finding),non_smoker_findings_codes
+87739003,Tolerant non-smoker (finding),non_smoker_findings_codes
+221000119102,Never smoked any substance (finding),non_smoker_findings_codes
+266919005,Never smoked tobacco (finding),Microtest_Error
+1092031000000108,Ex-smoker amount unknown (finding),non_smoker_findings_codes
+1092041000000104,Ex-very heavy smoker (40+/day) (finding),non_smoker_findings_codes
+1092071000000105,Ex-heavy smoker (20-39/day) (finding),non_smoker_findings_codes
+1092091000000109,Ex-moderate smoker (10-19/day) (finding),non_smoker_findings_codes
+1092111000000104,Ex-light smoker (1-9/day) (finding),non_smoker_findings_codes
+1092131000000107,Ex-trivial smoker (<1/day) (finding),non_smoker_findings_codes
+134406006,Smoking reduced (finding),Value_Finding_Smoker
+160603005,Light cigarette smoker (1-9 cigs/day) (finding),Value_Finding_Smoker
+160604004,Moderate cigarette smoker (10-19 cigs/day) (finding),Value_Finding_Smoker
+160605003,Heavy cigarette smoker (20-39 cigs/day) (finding),Value_Finding_Smoker
+160606002,Very heavy cigarette smoker (40+ cigs/day) (finding),Value_Finding_Smoker
+160612007,Keeps trying to stop smoking (finding),smoker_findings_codes
+160613002,Admitted tobacco consumption possibly untrue (finding),smoker_findings_codes
+160616005,Trying to give up smoking (finding),smoker_findings_codes
+160617001,Stopped smoking (finding),non_smoker_findings_codes
+160619003,Rolls own cigarettes (finding),smoker_findings_codes
+160620009,Ex-pipe smoker (finding),non_smoker_findings_codes
+160621008,Ex-cigar smoker (finding),non_smoker_findings_codes
+160625004,Date ceased smoking (observable entity),Observable_Entities
+203191000000107,Wants to stop smoking (finding),smoker_findings_codes
+221000119102,Never smoked any substance (finding),non_smoker_findings_codes
+225934006,Smokes in bed (finding),smoker_findings_codes
+228486009,Time since stopped smoking (observable entity),Observable_Entities
+230056004,Cigarette consumption (observable entity),Observable_Entities
+230057008,Cigar consumption (observable entity),Observable_Entities
+230058003,Pipe tobacco consumption (observable entity),Observable_Entities
+230059006,Occasional cigarette smoker (finding),Value_Finding_Smoker
+230060001,Light cigarette smoker (finding),Value_Finding_Smoker
+230062009,Moderate cigarette smoker (finding),Value_Finding_Smoker
+230063004,Heavy cigarette smoker (finding),Value_Finding_Smoker
+230064005,Very heavy cigarette smoker (finding),smoker_findings_codes
+230065006,Chain smoker (finding),smoker_findings_codes
+266918002,Tobacco smoking consumption (observable entity),Observable_Entities
+266919005,Never smoked tobacco (finding),Microtest_Error
+266920004,Trivial cigarette smoker (less than one cigarette/day) (finding),Value_Finding_Smoker
+266921000,Ex-trivial cigarette smoker (<1/day) (finding),Value_Finding_Non_Smoker
+266922007,Ex-light cigarette smoker (1-9/day) (finding),Value_Finding_Non_Smoker
+266923002,Ex-moderate cigarette smoker (10-19/day) (finding),Value_Finding_Non_Smoker
+266924008,Ex-heavy cigarette smoker (20-39/day) (finding),Value_Finding_Non_Smoker
+266925009,Ex-very heavy cigarette smoker (40+/day) (finding),Value_Finding_Non_Smoker
+266928006,Ex-cigarette smoker amount unknown (finding),non_smoker_findings_codes
+266929003,Smoking started (finding),smoker_findings_codes
+281018007,Ex-cigarette smoker (finding),non_smoker_findings_codes
+308438006,Smoking restarted (finding),smoker_findings_codes
+360890004,Intolerant ex-smoker (finding),non_smoker_findings_codes
+360900008,Aggressive ex-smoker (finding),non_smoker_findings_codes
+394871007,Thinking about stopping smoking (finding),smoker_findings_codes
+394872000,Ready to stop smoking (finding),smoker_findings_codes
+394873005,Not interested in stopping smoking (finding),smoker_findings_codes
+401159003,Reason for restarting smoking (observable entity),Observable_Entities
+401201003,Cigarette pack-years (observable entity),Observable_Entities
+413173009,Minutes from waking to first tobacco consumption (observable entity),Observable_Entities
+428041000124106,Occasional tobacco smoker (finding),smoker_findings_codes
+446172000,Failed attempt to stop smoking (finding),smoker_findings_codes
+449868002,Smokes tobacco daily (finding),smoker_findings_codes
+48031000119106,Ex-smoker for more than 1 year (finding),non_smoker_findings_codes
+492191000000103,Ex roll-up cigarette smoker (finding),non_smoker_findings_codes
+53896009,Tolerant ex-smoker (finding),non_smoker_findings_codes
+56578002,Moderate smoker (20 or less per day) (finding),Value_Finding_Smoker
+56771006,Heavy smoker (over 20 per day) (finding),Value_Finding_Smoker
+59978006,Cigar smoker (finding),Value_Finding_Smoker
+65568007,Cigarette smoker (finding),Value_Finding_Smoker
+735112005,Date ceased using moist tobacco (observable entity),Observable_Entities
+735128000,Ex-smoker for less than 1 year (finding),non_smoker_findings_codes
+77176002,Smoker (finding),Value_Finding_Smoker
+82302008,Pipe smoker (finding),Value_Finding_Smoker
+836001000000109,Waterpipe tobacco consumption (observable entity),Observable_Entities
+8517006,Ex-smoker (finding),non_smoker_findings_codes
+134406006,Smoking reduced (finding),Value_Finding_Smoker
+160603005,Light cigarette smoker (1-9 cigs/day) (finding),Value_Finding_Smoker
+160604004,Moderate cigarette smoker (10-19 cigs/day) (finding),Value_Finding_Smoker
+160605003,Heavy cigarette smoker (20-39 cigs/day) (finding),Value_Finding_Smoker
+160606002,Very heavy cigarette smoker (40+ cigs/day) (finding),Value_Finding_Smoker
+160612007,Keeps trying to stop smoking (finding),smoker_findings_codes
+160613002,Admitted tobacco consumption possibly untrue (finding),smoker_findings_codes
+160616005,Trying to give up smoking (finding),smoker_findings_codes
+160619003,Rolls own cigarettes (finding),smoker_findings_codes
+203191000000107,Wants to stop smoking (finding),smoker_findings_codes
+225934006,Smokes in bed (finding),smoker_findings_codes
+230056004,Cigarette consumption (observable entity),Observable_Entities
+230057008,Cigar consumption (observable entity),Observable_Entities
+230058003,Pipe tobacco consumption (observable entity),Observable_Entities
+230059006,Occasional cigarette smoker (finding),Value_Finding_Smoker
+230060001,Light cigarette smoker (finding),Value_Finding_Smoker
+230062009,Moderate cigarette smoker (finding),Value_Finding_Smoker
+230063004,Heavy cigarette smoker (finding),Value_Finding_Smoker
+230064005,Very heavy cigarette smoker (finding),smoker_findings_codes
+230065006,Chain smoker (finding),smoker_findings_codes
+266918002,Tobacco smoking consumption (observable entity),Observable_Entities
+266920004,Trivial cigarette smoker (less than one cigarette/day) (finding),Value_Finding_Smoker
+266929003,Smoking started (finding),smoker_findings_codes
+308438006,Smoking restarted (finding),smoker_findings_codes
+394871007,Thinking about stopping smoking (finding),smoker_findings_codes
+394872000,Ready to stop smoking (finding),smoker_findings_codes
+394873005,Not interested in stopping smoking (finding),smoker_findings_codes
+836001000000109,Waterpipe tobacco consumption (observable entity),Observable_Entities
+82302008,Pipe smoker (finding),Value_Finding_Smoker
+401159003,Reason for restarting smoking (observable entity),Observable_Entities
+413173009,Minutes from waking to first tobacco consumption (observable entity),Observable_Entities
+428041000124106,Occasional tobacco smoker (finding),smoker_findings_codes
+446172000,Failed attempt to stop smoking (finding),smoker_findings_codes
+449868002,Smokes tobacco daily (finding),smoker_findings_codes
+56578002,Moderate smoker (20 or less per day) (finding),Value_Finding_Smoker
+56771006,Heavy smoker (over 20 per day) (finding),Value_Finding_Smoker
+59978006,Cigar smoker (finding),Value_Finding_Smoker
+65568007,Cigarette smoker (finding),Value_Finding_Smoker
+77176002,Smoker (finding),Value_Finding_Smoker
