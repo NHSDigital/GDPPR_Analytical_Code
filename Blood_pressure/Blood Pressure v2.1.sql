@@ -1,0 +1,366 @@
+-- COMMAND ----------
+
+---- Table of all Journals with a blood pressure SNOMED code
+CREATE OR REPLACE TEMPORARY VIEW ALL_BP_JOURNALS AS
+SELECT a.*
+, b.ConceptId_Description
+, b.INITIAL_BREAKDOWN
+, b.TYPE_OF_JOURNAL
+FROM gdppr_database.gdppr_table AS a
+INNER JOIN ref_data.blood_pressure_ref_data AS b
+ON a.CODE = b.ConceptID
+WHERE a.CODE IN (SELECT DISTINCT ConceptID FROM ref_data.blood_pressure_ref_data)
+
+-- COMMAND ----------
+
+-- MAGIC %md ## PULL TOGETHER SBP AND DBP VALUES AND ADD THESE TO THE ALL CATEGORY
+
+-- COMMAND ----------
+
+CREATE OR REPLACE TEMPORARY VIEW SBP_TABLE AS
+SELECT * 
+FROM ALL_BP_JOURNALS
+WHERE INITIAL_BREAKDOWN = "SBP"
+
+-- COMMAND ----------
+
+CREATE OR REPLACE TEMPORARY VIEW DBP_TABLE AS
+SELECT * 
+FROM ALL_BP_JOURNALS
+WHERE INITIAL_BREAKDOWN = "DBP"
+
+-- COMMAND ----------
+
+-- MAGIC %md ## NUMERIC JOURNALS
+
+-- COMMAND ----------
+
+---- Drop value 2 condition in the SBP value and replace the value 2 condition with the DBP value
+---- Join together SBP and DBP journals 
+----- union on snomed codes for both SBP and DBP together
+CREATE OR REPLACE TEMPORARY VIEW NUMERIC_TABLE AS
+SELECT a.YEAR_OF_BIRTH,
+a.SEX,
+a.LSOA,
+a.YEAR_OF_DEATH,
+a.NHS_NUMBER_DEID,
+a.ETHNIC,
+a.PRACTICE,
+a.GP_SYSTEM_SUPPLIER,
+a.PROCESSED_TIMESTAMP,
+a.REPORTING_PERIOD_END_DATE,
+a.JOURNAL_REPORTING_PERIOD_END_DATE,
+a.DATE,
+a.RECORD_DATE,
+a.CODE,
+a.SENSITIVE_CODE,
+a.EPISODE_CONDITION,
+a.EPISODE_PRESCRIPTION,
+a.VALUE1_CONDITION,
+a.VALUE1_PRESCRIPTION,
+b.VALUE1_CONDITION AS VALUE2_CONDITION, -- replace with DBP value1
+b.VALUE1_PRESCRIPTION AS VALUE2_PRESCRIPTION,
+a.LINKS,
+a.ConceptId_Description,
+a.INITIAL_BREAKDOWN,
+a.TYPE_OF_JOURNAL
+FROM SBP_TABLE AS a
+INNER JOIN DBP_TABLE AS b
+ON a.NHS_NUMBER_DEID = b.NHS_NUMBER_DEID
+AND a.DATE = b.DATE
+AND a.PRACTICE = b.PRACTICE
+AND a.REPORTING_PERIOD_END_DATE = b.REPORTING_PERIOD_END_DATE
+AND a.JOURNAL_REPORTING_PERIOD_END_DATE = b.JOURNAL_REPORTING_PERIOD_END_DATE
+WHERE a.VALUE1_CONDITION IS NOT NULL 
+AND b.VALUE1_CONDITION IS NOT NULL
+
+UNION
+
+SELECT * 
+FROM ALL_BP_JOURNALS
+WHERE INITIAL_BREAKDOWN = "ALL" 
+AND VALUE1_CONDITION IS NOT NULL 
+AND VALUE2_CONDITION IS NOT NULL
+
+-- COMMAND ----------
+
+CREATE OR REPLACE TEMPORARY VIEW ALL_NUMERIC_JOURNALS AS
+SELECT *,
+  CASE
+    WHEN (
+      VALUE1_CONDITION < 70
+      OR VALUE1_CONDITION > 190
+      OR VALUE2_CONDITION < 40
+      OR VALUE2_CONDITION > 100
+    ) THEN "Indeterminable"
+    WHEN (
+      VALUE1_CONDITION >= 70
+      AND VALUE1_CONDITION < 90
+      AND VALUE2_CONDITION >= 40
+      AND VALUE2_CONDITION < 60
+    ) THEN "Low Blood Pressure"
+    WHEN (
+      VALUE1_CONDITION >= 90
+      AND VALUE1_CONDITION < 120
+      AND VALUE2_CONDITION >= 40
+      AND VALUE2_CONDITION < 80
+    )
+    OR (
+      VALUE1_CONDITION >= 70
+      AND VALUE1_CONDITION < 90
+      AND VALUE2_CONDITION >= 60
+      AND VALUE2_CONDITION < 80
+    ) THEN "Ideal Blood Pressure"
+    WHEN (
+      VALUE1_CONDITION >= 120
+      AND VALUE1_CONDITION < 140
+      AND VALUE2_CONDITION >= 40
+      AND VALUE2_CONDITION < 90
+    )
+    OR (
+      VALUE1_CONDITION >= 70
+      AND VALUE1_CONDITION < 120
+      AND VALUE2_CONDITION >= 80
+      AND VALUE2_CONDITION < 90
+    ) THEN "Pre-High Blood Pressure"
+    WHEN (
+      VALUE1_CONDITION >= 140
+      AND VALUE1_CONDITION <= 190
+      AND VALUE2_CONDITION >= 40
+      AND VALUE2_CONDITION <= 100
+    )
+    OR (
+      VALUE1_CONDITION >= 70
+      AND VALUE1_CONDITION < 140
+      AND VALUE2_CONDITION >= 90
+      AND VALUE2_CONDITION <= 100
+    ) THEN "High Blood Pressure"
+    WHEN VALUE1_CONDITION IS NULL
+    AND VALUE2_CONDITION IS NULL THEN "Indeterminable"
+    ELSE "Indeterminable"
+  END AS FINAL_BP_CATS
+FROM
+ NUMERIC_TABLE
+
+-- COMMAND ----------
+
+-- MAGIC %md
+-- MAGIC ## NON NUMERIC JOURNALS
+
+-- COMMAND ----------
+
+---- Categorise SBP when only using the description in the code
+CREATE OR REPLACE TEMPORARY VIEW SBP_NULL_TABLE AS
+SELECT * ,
+CASE WHEN TYPE_OF_JOURNAL = "Low-Finding" AND VALUE1_CONDITION IS NULL THEN "Low Systolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "Ideal-Finding" AND VALUE1_CONDITION IS NULL THEN "Ideal Systolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "Pre-High Finding" AND VALUE1_CONDITION IS NULL THEN "Pre-High Systolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "High-Finding" AND VALUE1_CONDITION IS NULL THEN "High Systolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "Indeterminable" THEN "Indeterminable"
+     ELSE "Indeterminable"
+     END AS SBP_CATS
+FROM SBP_TABLE
+WHERE VALUE1_CONDITION IS NULL
+
+-- COMMAND ----------
+
+---- Categorise DBP when only using the description in the code
+CREATE OR REPLACE TEMPORARY VIEW DBP_NULL_TABLE AS
+SELECT * ,
+CASE WHEN TYPE_OF_JOURNAL = "Low-Finding" AND VALUE1_CONDITION IS NULL THEN "Low Diastolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "Ideal-Finding" AND VALUE1_CONDITION IS NULL THEN "Ideal Diastolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "Pre-High Finding" AND VALUE1_CONDITION IS NULL THEN "Pre-High Diastolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "High-Finding" AND VALUE1_CONDITION IS NULL THEN "High Diastolic Blood Pressure"
+     WHEN TYPE_OF_JOURNAL = "Indeterminable" THEN "Indeterminable"
+     ELSE "Indeterminable"
+     END AS DBP_CATS
+FROM DBP_TABLE
+WHERE VALUE1_CONDITION IS NULL
+
+-- COMMAND ----------
+
+---- Need the SBP & DBP journal records (assigned value on description) recorded at the same date, practice etc..
+---- Replace the SBP NULL value with the status assigned by the description
+---- Replace the DBP NULL value with the status assigned by the description
+CREATE OR REPLACE TEMPORARY VIEW SBP_DBP_NULL_TABLE AS
+SELECT a.YEAR_OF_BIRTH,
+a.SEX,
+a.LSOA,
+a.YEAR_OF_DEATH,
+a.NHS_NUMBER_DEID,
+a.ETHNIC,
+a.PRACTICE,
+a.GP_SYSTEM_SUPPLIER,
+a.PROCESSED_TIMESTAMP,
+a.REPORTING_PERIOD_END_DATE,
+a.JOURNAL_REPORTING_PERIOD_END_DATE,
+a.DATE,
+a.RECORD_DATE,
+a.CODE,
+a.SENSITIVE_CODE,
+a.EPISODE_CONDITION,
+a.EPISODE_PRESCRIPTION,
+a.SBP_CATS AS VALUE1_CONDITION,
+a.VALUE1_PRESCRIPTION,
+b.DBP_CATS AS VALUE2_CONDITION,
+b.VALUE1_PRESCRIPTION AS VALUE2_PRESCRIPTION,
+a.LINKS,
+a.ConceptId_Description,
+a.INITIAL_BREAKDOWN,
+a.TYPE_OF_JOURNAL
+FROM SBP_NULL_TABLE AS a
+INNER JOIN DBP_NULL_TABLE AS b
+ON a.NHS_NUMBER_DEID = b.NHS_NUMBER_DEID
+AND a.DATE = b.DATE
+AND a.PRACTICE = b.PRACTICE
+AND a.REPORTING_PERIOD_END_DATE = b.REPORTING_PERIOD_END_DATE
+AND a.JOURNAL_REPORTING_PERIOD_END_DATE = b.JOURNAL_REPORTING_PERIOD_END_DATE
+
+-- COMMAND ----------
+
+---- Collate non-numeric journals
+CREATE OR REPLACE TEMPORARY VIEW ALL_JOURNALS_WITH_MATCHING_NULL AS
+
+SELECT * 
+FROM All_BP_Journals 
+WHERE INITIAL_BREAKDOWN = "ALL" 
+AND VALUE1_CONDITION IS NULL 
+AND VALUE2_CONDITION IS NULL
+
+UNION 
+
+SELECT * 
+FROM SBP_DBP_NULL_TABLE
+
+-- COMMAND ----------
+
+CREATE OR REPLACE TEMPORARY VIEW ALL_JOURNALS_NHS_BP_LEVELS_NULL AS
+SELECT
+  *,
+  CASE
+    WHEN INITIAL_BREAKDOWN = "ALL"
+    AND TYPE_OF_JOURNAL = "Low-Finding"
+    AND VALUE1_CONDITION IS NULL
+    AND VALUE2_CONDITION IS NULL THEN "Low Blood Pressure"
+    WHEN INITIAL_BREAKDOWN = "ALL"
+    AND TYPE_OF_JOURNAL = "Ideal-Finding"
+    AND VALUE1_CONDITION IS NULL
+    AND VALUE2_CONDITION IS NULL THEN "Ideal Blood Pressure"
+    WHEN INITIAL_BREAKDOWN = "ALL"
+    AND TYPE_OF_JOURNAL = "Pre-High Finding"
+    AND VALUE1_CONDITION IS NULL
+    AND VALUE2_CONDITION IS NULL THEN "Pre-High Blood Pressure"
+    WHEN INITIAL_BREAKDOWN = "ALL"
+    AND TYPE_OF_JOURNAL = "High-Finding"
+    AND VALUE1_CONDITION IS NULL
+    AND VALUE2_CONDITION IS NULL THEN "High Blood Pressure"
+    WHEN VALUE1_CONDITION = "Low Systolic Blood Pressure"
+    AND VALUE2_CONDITION = "Low Diastolic Blood Pressure" THEN "Low Blood Pressure"
+    WHEN (
+      VALUE1_CONDITION = "Ideal Systolic Blood Pressure"
+      AND (
+        VALUE2_CONDITION = "Low Diastolic Blood Pressure"
+        OR VALUE2_CONDITION = "Ideal Diastolic Blood Pressure"
+      )
+    )
+    OR (
+      VALUE1_CONDITION = "Low Systolic Blood Pressure"
+      AND VALUE2_CONDITION = "Ideal Diastolic Blood Pressure"
+    ) THEN "Ideal Blood Pressure"
+    WHEN (
+      VALUE1_CONDITION = "Pre-High Systolic Blood Pressure"
+      AND (
+        VALUE2_CONDITION = "Low Diastolic Blood Pressure"
+        OR VALUE2_CONDITION = "Ideal Diastolic Blood Pressure"
+        OR VALUE2_CONDITION = "Pre-High Diastolic Blood Pressure"
+      )
+    )
+    OR (
+      (
+        VALUE1_CONDITION = "Low Systolic Blood Pressure"
+        OR VALUE1_CONDITION = "Ideal Systolic Blood Pressure"
+      )
+      AND VALUE2_CONDITION = "Pre-High Diastolic Blood Pressure"
+    ) THEN "Pre-High Blood Pressure"
+    WHEN (
+      VALUE1_CONDITION = "High Systolic Blood Pressure"
+      AND (
+        VALUE2_CONDITION = "Low Diastolic Blood Pressure"
+        OR VALUE2_CONDITION = "Ideal Diastolic Blood Pressure"
+        OR VALUE2_CONDITION = "Pre-High Diastolic Blood Pressure"
+        OR VALUE2_CONDITION = "High Diastolic Blood Pressure"
+      )
+    )
+    OR (
+      (
+        VALUE1_CONDITION = "Low Systolic Blood Pressure"
+        OR VALUE1_CONDITION = "Ideal Systolic Blood Pressure"
+        OR VALUE1_CONDITION = "Pre-High Systolic Blood Pressure"
+      )
+      AND VALUE2_CONDITION = "High Diastolic Blood Pressure"
+    ) THEN "High Blood Pressure"
+    ELSE "Indeterminable"
+  END AS FINAL_BP_CATS
+FROM
+  ALL_JOURNALS_WITH_MATCHING_NULL
+
+-- COMMAND ----------
+
+-- MAGIC %md
+-- MAGIC ## REMOVE INDETERMINABLE AND FIND MOST RECENT
+
+-- COMMAND ----------
+
+CREATE OR REPLACE TEMPORARY VIEW ALL_JOURNALS_WITH_BP_STATUS AS
+
+SELECT * 
+FROM ALL_NUMERIC_JOURNALS
+WHERE FINAL_BP_CATS != "Indeterminable"
+
+UNION 
+
+SELECT * 
+FROM ALL_JOURNALS_NHS_BP_LEVELS_NULL 
+WHERE FINAL_BP_CATS != "Indeterminable"
+
+-- COMMAND ----------
+
+---- Get the most recent record
+CREATE OR REPLACE TEMPORARY VIEW MAX_DATE AS
+SELECT NHS_NUMBER_DEID
+, MAX(DATE) AS DATE
+FROM ALL_JOURNALS_WITH_BP_STATUS 
+GROUP BY NHS_NUMBER_DEID
+
+-- COMMAND ----------
+
+---- full table of most recent records
+CREATE OR REPLACE TEMPORARY VIEW TABLE_MOST_RECENT_RECORDS AS
+SELECT a.*
+FROM  ALL_JOURNALS_WITH_BP_STATUS AS a
+INNER JOIN MAX_DATE AS b
+ON a.NHS_NUMBER_DEID = b.NHS_NUMBER_DEID
+AND a.DATE = b.DATE
+
+-- COMMAND ----------
+
+-- MAGIC %md
+-- MAGIC ## REMOVE CONFLICTS
+
+-- COMMAND ----------
+
+---- Need to remove those with conflicting BP status at their most recent record
+CREATE OR REPLACE TEMPORARY VIEW TABLE_JOURNAL_COUNTS AS
+SELECT NHS_NUMBER_DEID
+, COUNT(DISTINCT FINAL_BP_CATS) AS COUNT_CATEGORIES
+FROM TABLE_MOST_RECENT_RECORDS
+GROUP BY NHS_NUMBER_DEID
+
+-- COMMAND ----------
+
+---- Any individual with conflicting BP statuses at their most recent record is removed
+CREATE OR REPLACE TEMPORARY VIEW BP_MOST_RECENT_NO_CONFLICTS AS
+SELECT *,
+(YEAR(DATE)) - YEAR_OF_BIRTH AS AGE_AT_TIME_OF_JOURNAL -- add in age
+FROM TABLE_MOST_RECENT_RECORDS
+WHERE NHS_NUMBER_DEID IN (SELECT DISTINCT NHS_NUMBER_DEID FROM TABLE_JOURNAL_COUNTS WHERE COUNT_CATEGORIES = 1)

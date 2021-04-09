@@ -1,0 +1,99 @@
+ConceptId,ConceptId_Description,INITIAL_BREAKDOWN,TYPE_OF_JOURNAL
+723237002,Non-invasive blood pressure (observable entity),ALL,OE
+251076008,Non-invasive arterial pressure (observable entity),ALL,OE
+407557002,Lying diastolic blood pressure (observable entity),DBP,OE
+164783007,Ambulatory blood pressure recording (procedure),ALL,Procedure
+314440001,Average systolic blood pressure (observable entity),SBP,OE
+163024003,On examination - blood pressure borderline low (disorder),ALL,Ideal-Finding
+386534000,Arterial blood pressure (observable entity),ALL,OE
+163026001,On examination - blood pressure borderline raised (finding),ALL,Pre-High Finding
+400974009,Standing systolic blood pressure (observable entity),SBP,OE
+314449000,Average 24 hour systolic blood pressure (observable entity),SBP,OE
+407555005,Sitting diastolic blood pressure (observable entity),DBP,OE
+174255007,Non-invasive diastolic arterial pressure (observable entity),DBP,OE
+314454009,Minimum day interval diastolic blood pressure (observable entity),DBP,OE
+723236006,Minimum blood pressure (observable entity),ALL,OE
+314455005,Minimum night interval diastolic blood pressure (observable entity),DBP,OE
+163033001,Lying blood pressure (observable entity),ALL,OE
+6797001,Mean blood pressure (observable entity),ALL,OE
+170582005,On examination - check high blood pressure (finding),ALL,High-Finding
+335661000000109,Self measured blood pressure reading (observable entity),ALL,OE
+163020007,On examination - blood pressure reading (finding),ALL,Value-Needed
+163035008,Sitting blood pressure (observable entity),ALL,OE
+314462001,Average 24 hour diastolic blood pressure (observable entity),DBP,OE
+81010002,Decreased systolic arterial pressure (finding),SBP,Low-Finding
+716632005,Baseline diastolic blood pressure (observable entity),DBP,OE
+163025002,On examination - blood pressure reading normal (finding),ALL,Ideal-Finding
+314465004,24 hour diastolic blood pressure (observable entity),DBP,OE
+75367002,Blood pressure (observable entity),ALL,OE
+163031004,On examination - Diastolic blood pressure reading (finding),DBP,Value-Needed
+314459004,Maximum 24 hour diastolic blood pressure (observable entity),DBP,OE
+163027005,On examination - blood pressure reading raised (finding),ALL,High-Finding
+163032006,On examination - blood pressure stable (finding),ALL,Value-Needed
+313005002,On examination - blood pressure reading: no postural drop (situation),ALL,Situation
+271650006,Diastolic blood pressure (observable entity),DBP,OE
+314463006,24 hour blood pressure (observable entity),ALL,OE
+163023009,On examination - blood pressure reading low (disorder),ALL,Low-Finding
+24184005,Finding of increased blood pressure (finding),ALL,High-Finding
+314444005,Maximum day interval systolic blood pressure (observable entity),SBP,OE
+23154005,Increased diastolic arterial pressure (finding),DBP,High-Finding
+198091000000104,Ambulatory diastolic blood pressure (observable entity),DBP,OE
+314456006,Minimum 24 hour diastolic blood pressure (observable entity),DBP,OE
+12929001,Normal systolic arterial pressure (finding),SBP,Ideal-Finding
+251078009,Post-vasodilatation arterial pressure (observable entity),ALL,OE
+271870002,Low blood pressure reading (disorder),ALL,Low-Finding
+12763006,Finding of decreased blood pressure (finding),ALL,Low-Finding
+314438006,Minimum systolic blood pressure (observable entity),SBP,OE
+314464000,24 hour systolic blood pressure (observable entity),SBP,OE
+314443004,Maximum night interval systolic blood pressure (observable entity),SBP,OE
+314448008,Maximum 24 hour systolic blood pressure (observable entity),SBP,OE
+18352002,Abnormal systolic arterial pressure (finding),SBP,Value-Needed
+716579001,Baseline systolic blood pressure (observable entity),SBP,OE
+314458007,Maximum day interval diastolic blood pressure (observable entity),DBP,OE
+928021000000108,Baseline blood pressure (observable entity),ALL,OE
+723235005,Maximum blood pressure (observable entity),ALL,OE
+707303003,Post exercise systolic blood pressure response abnormal (finding),SBP,Indeterminable
+18050000,Increased systolic arterial pressure (finding),SBP,High-Finding
+163029008,On examination - blood pressure reading: postural drop (finding),ALL,Indeterminable
+251070002,Non-invasive systolic arterial pressure (observable entity),SBP,OE
+314457002,Maximum night interval diastolic blood pressure (observable entity),DBP,OE
+49844009,Abnormal diastolic arterial pressure (finding),DBP,Value-Needed
+53813002,Normal diastolic arterial pressure (finding),DBP,Ideal-Finding
+314442009,Minimum night interval systolic blood pressure (observable entity),SBP,OE
+251074006,Non-invasive mean arterial pressure (observable entity),ALL,OE
+2004005,Normal blood pressure (finding),ALL,Ideal-Finding
+413606001,Average home systolic blood pressure (observable entity),SBP,OE
+852291000000105,Maximum mean blood pressure (observable entity),ALL,OE
+314439003,Maximum systolic blood pressure (observable entity),SBP,OE
+163037000,On examination - blood pressure labile (finding),ALL,Indeterminable
+314445006,Average night interval systolic blood pressure (observable entity),SBP,OE
+399304008,Systolic blood pressure on admission (observable entity),SBP,OE
+42689008,Decreased diastolic arterial pressure (finding),DBP,Low-Finding
+400975005,Standing diastolic blood pressure (observable entity),DBP,OE
+314453003,Average diastolic blood pressure (observable entity),DBP,OE
+170581003,On examination - initial high blood pressure (finding),ALL,High-Finding
+314451001,Minimum diastolic blood pressure (observable entity),DBP,OE
+386536003,Systemic blood pressure (observable entity),ALL,OE
+1091811000000102,Diastolic arterial pressure (observable entity),DBP,OE
+364090009,Systemic arterial pressure (observable entity),ALL,OE
+163036009,On examination - blood pressure decreased (finding),ALL,Low-Finding
+163022004,On examination - blood pressure reading very low (disorder),ALL,Low-Finding
+723232008,Average blood pressure (observable entity),ALL,OE
+314452008,Maximum diastolic blood pressure (observable entity),DBP,OE
+26014004,Increased mean arterial pressure (finding),ALL,High-Finding
+72313002,Systolic arterial pressure (observable entity),SBP,OE
+163028000,On examination - blood pressure reading very high (finding),ALL,High-Finding
+852301000000109,Minimum mean blood pressure (observable entity),ALL,OE
+314461008,Average day interval diastolic blood pressure (observable entity),DBP,OE
+413605002,Average home diastolic blood pressure (observable entity),DBP,OE
+198081000000101,Ambulatory systolic blood pressure (observable entity),SBP,OE
+271649006,Systolic blood pressure (observable entity),SBP,OE
+314460009,Average night interval diastolic blood pressure (observable entity),DBP,OE
+314447003,Minimum 24 hour systolic blood pressure (observable entity),SBP,OE
+407556006,Lying systolic blood pressure (observable entity),SBP,OE
+314441002,Minimum day interval systolic blood pressure (observable entity),SBP,OE
+163030003,On examination - Systolic blood pressure reading (finding),SBP,Value-Needed
+314446007,Average day interval systolic blood pressure (observable entity),SBP,OE
+1105331000000106,Blood pressure measurement using oscillometric monitoring device with opportunistic atrial fibrillation detection (procedure),ALL,ERROR
+163034007,Standing blood pressure (observable entity),ALL,OE
+407554009,Sitting systolic blood pressure (observable entity),SBP,OE
