@@ -20,6 +20,8 @@ d) For method 3, journals assigned an [NHS data dictionary blood pressure status
 
 e) For method 4, journals are joined based on NHS number, date etc. to ensure readings were taken on the same day and are then assigned an [NHS data dictionary blood pressure status](https://www.nhs.uk/conditions/high-blood-pressure-hypertension/)
 
+f) Journals with an indeterminable blood pressure status are removed and the most recent blood pressure status is selected for each patient.
+
 # NOTES
 
 GDPPR data = ```gdppr_database.gdppr_table```
