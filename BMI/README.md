@@ -18,6 +18,8 @@ a) For method 1 a BMI category is assigned using [NHS BMI groupings](https://www
 
 b) For methods 2 and 4, the BMI category assigned via the snomed code description was assumed to be correct unless the associated BMI value conflicted with the BMI category.
 
+c) Patients with an indeterminable BMI category are removed and the most recent BMI category recorded for each patient is selected.
+
 # NOTES
 
 GDPPR data = ```gdppr_database.gdppr_table```
