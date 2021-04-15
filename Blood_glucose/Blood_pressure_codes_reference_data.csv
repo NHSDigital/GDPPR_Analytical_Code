@@ -1,0 +1,42 @@
+ConceptId,ConceptId_Description,TYPE_OF_BLOOD_GLUCOSE_RECORD,FASTING_STATUS
+1012661000000105,150 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+1003121000000103,180 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+1010701000000103,90 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+996311000000105,Extended glucose tolerance test (observable entity),TOLERANCE,OGTT
+1003141000000105,Plasma fasting glucose level (observable entity),PLASMA,FASTING
+1083781000000102,Post-prandial blood glucose concentration (observable entity),BLOOD,INDETERMINABLE
+1003721000000104,120 minute blood glucose level (observable entity),BLOOD,OGTT
+1031331000000106,Plasma random glucose level (observable entity),PLASMA,RANDOM
+1028901000000108,Plasma 2 hours post-prandial glucose level (observable entity),PLASMA,NON-FASTING
+1003131000000101,Serum fasting glucose level (observable entity),SERUM,FASTING
+1107451000000100,Substance concentration of glucose in serum (observable entity),SERUM,NON-FASTING
+1010611000000107,Serum glucose level (observable entity),SERUM,NON-FASTING
+1110521000000108,Substance concentration of glucose in plasma (observable entity),PLASMA,NON-FASTING
+1028891000000107,Serum 2 hours post-prandial glucose level (observable entity),SERUM,NON-FASTING
+1010631000000104,60 minute serum glucose level (observable entity),SERUM,INDETERMINABLE
+1005711000000106,Glucose tolerance test (observable entity),TOLERANCE,OGTT
+1028881000000105,Serum random glucose level (observable entity),SERUM,RANDOM
+998291000000108,300 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+998281000000106,240 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+997681000000108,Fasting blood glucose level (observable entity),BLOOD,FASTING
+1089381000000101,Random blood glucose level (observable entity),BLOOD,RANDOM
+1003711000000105,90 minute blood glucose level (observable entity),BLOOD,INDETERMINABLE
+1003701000000108,60 minute blood glucose level (observable entity),BLOOD,INDETERMINABLE
+1010661000000109,150 minute serum glucose level (observable entity),SERUM,INDETERMINABLE
+1010651000000106,120 minute serum glucose level (observable entity),SERUM,OGTT
+1049321000000109,Haemoglobin A1c level (monitoring ranges) - International Federation of Clinical Chemistry and Laboratory Medicine standardised (observable entity),HBA1C,NON-FASTING
+1049301000000100,Haemoglobin A1c level (diagnostic reference range) - International Federation of Clinical Chemistry and Laboratory Medicine standardised (observable entity),HBA1C,NON-FASTING
+997671000000106,Blood glucose level (observable entity),BLOOD,NON-FASTING
+1010711000000101,120 minute plasma glucose level (observable entity),PLASMA,OGTT
+1003691000000108,30 minute blood glucose level (observable entity),BLOOD,INDETERMINABLE
+994411000000106,Blood glucose series (observable entity),BLOOD,INDETERMINABLE
+1010621000000101,30 minute serum glucose level (observable entity),SERUM,INDETERMINABLE
+1003731000000102,150 minute blood glucose level (observable entity),BLOOD,INDETERMINABLE
+1030551000000103,2 hour post-prandial blood glucose level (observable entity),BLOOD,NON-FASTING
+999791000000106,Haemoglobin A1c level - International Federation of Clinical Chemistry and Laboratory Medicine standardised (observable entity),HBA1C,NON-FASTING
+1010681000000100,30 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+1010641000000108,90 minute serum glucose level (observable entity),SERUM,INDETERMINABLE
+1010691000000103,60 minute plasma glucose level (observable entity),PLASMA,INDETERMINABLE
+1045471000000104,210 minute plasma glucose concentration (observable entity),PLASMA,INDETERMINABLE
+1010671000000102,Plasma glucose level (observable entity),PLASMA,NON-FASTING
+928041000000101,Baseline blood glucose concentration (observable entity),BLOOD,FASTING
