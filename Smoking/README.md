@@ -19,4 +19,4 @@ c) For method 2, journals are assigned an NHS data dictionary smoking status bas
 
 GDPPR data = ```gdppr_database.gdppr_table```
 
-smoking status snomed code reference data = ```ref_data.BMI_CODES```
+smoking status snomed code reference data = ```reference_database.smoking_ref_data```
