@@ -26,7 +26,7 @@ c) Journals initially categorised as 'Blood', 'Plasma' or 'Serum', and have furt
 
 d) Journals with a sub-classification of 'OGTT' can only be categorised if it is joined to an associated 'Fasting' journal as these statuses are determined on the basis of the fasting and 2 hour levels. These journals are matched according to NHS_Number/date of recording etc. and are then categorised according to [these thresholds](https://www.diabetes.co.uk/diabetes_care/blood-sugar-level-ranges.html) and discussions with internal clinicians
 
-    i. Journals with a sub-classification of 'Fasting' can be categorised alone without the OGTT journal and are therefore categorised alone if no OGTT journal is also present. They are categorised according to [these thresholds](https://www.diabetes.co.uk/diabetes_care/blood-sugar-level-ranges.html) and discussions with internal clinicians.
+   -  Journals with a sub-classification of 'Fasting' can be categorised alone without the OGTT journal and are therefore categorised alone if no OGTT journal is also present. They are categorised according to [these thresholds](https://www.diabetes.co.uk/diabetes_care/blood-sugar-level-ranges.html) and discussions with internal clinicians.
 
 e) Journals without a blood glucose reading (value) or journals with indeterminable statuses are removed and the most recent blood glucose reading for each patient is selected.
 
