@@ -17,5 +17,8 @@ Due to the analytical environment NHS Digital uses (databricks) it is possible f
 Code is included for the following pieces of analysis:
 * Ethnicity
 * BMI
+* Blood pressure status
+* Blood glucose status
+* Smoking status
 
 Please note that the majority of this code has been written as part of exploratory analyses so care should be taken to ensure it is appropriate for your own analysis and that relevant clinical advice is sought where appropriate. All code and methodology is subject to change following further analysis.  
